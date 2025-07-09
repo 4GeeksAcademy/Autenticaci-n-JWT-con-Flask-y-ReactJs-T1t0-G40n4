@@ -70,7 +70,7 @@ def get_user_data():
     user = db.session.get(User, int(current_user_id))
 
     if user is None:
-        return jsonify({'error':'User not exist'}),400
+        return jsonify({'error':'User not exist'}),404
     user = user.serialize()
     return jsonify({'user':user}), 200
 
